@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar mode='ios'>
+    <ion-back-button slot="start"></ion-back-button>
+    <ion-title>Listes des Categories</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+  <ion-list *ngIf="categories?.length > 0">
+    <ion-item *ngFor="let cat of categories" [routerLink]="['/restaurant-list', cat.id]">
+      <ion-avatar slot="start">
+        <ion-img [src]="cat.image"></ion-img>
+      </ion-avatar>
+      <ion-label><b style="font-size: 20px;color:rgb(20, 4, 65);">{{cat.name}}</b></ion-label>
+    </ion-item>
+  </ion-list>
+
+
+
+  <ion-fab slot="fixed" horizontal="end" vertical="bottom">
+    <ion-fab-button routerLink="/add-restaurant-category">
+      <ion-icon name="add-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+</ion-content>

@@ -1,0 +1,54 @@
+<ion-header>
+
+  <ion-toolbar mode='ios'>
+    <ion-buttons>
+      <ion-back-button slot="start"></ion-back-button>
+      <ion-title>Restaurant Details</ion-title>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<!--
+  <ion-item >
+    <ion-avatar slot="start">
+      <ion-img [src]="restaurant.image"></ion-img>
+    </ion-avatar>
+    <ion-label>{{restaurant.name}}</ion-label>
+  </ion-item>
+-->
+  <ion-content>
+
+    <ion-card *ngIf="restaurant">
+
+      <img [src]="restaurant.imageRestaurant"/>
+
+      <ion-card-content>
+        <ion-card-title class="ion-text-center">
+          <b style="font-size: 25px;color:rgb(20, 4, 65);">{{restaurant.nameRestaurant}}</b>
+        </ion-card-title>
+        <br>
+        <p>
+          <b style="font-size: 20px;color:rgb(124, 67, 64);">Adresse : </b><em style="font-size: 18px;color:rgb(0, 0, 0);">{{restaurant.adresseRestaurant}}</em>
+        </p>
+        <p>
+          <b style="font-size: 20px;color:rgb(124, 67, 64);">Categorie : </b><em style="font-size: 18px;color:rgb(0, 0, 0);">{{restaurant.name}}</em>
+        </p>
+      </ion-card-content>
+
+    </ion-card>
+    <ion-fab horizontal="end" vertical="bottom" slot="fixed" >
+      <ion-fab-button color="dark">
+        <ion-icon md="caret-up" ios="chevron-up-circle-outline"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-list side="top">
+        <ion-fab-button color="light" (click)="supprimer()">
+          <ion-icon name="trash"></ion-icon>
+        </ion-fab-button>
+        <!--<ion-fab-button color="light" (click)="editer()">
+          <ion-icon name="create"></ion-icon>
+        </ion-fab-button>-->
+      </ion-fab-list>
+    </ion-fab>
+
+
+
+  </ion-content>
